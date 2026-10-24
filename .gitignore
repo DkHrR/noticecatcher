@@ -1,0 +1,11 @@
+.env
+design/
+__pycache__/
+*.py[cod]
+.venv/
+scratch*.py
+real_chats/
+out/
+*.ics
+!samples/*.ics
+!samples/**/*.ics

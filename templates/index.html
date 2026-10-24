@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NoticeCatcher</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  {% if preview %}
+  <div class="preview-banner">
+    PREVIEW DATA - NOT REAL OUTPUT
+  </div>
+  {% endif %}
+
+  <main class="main-container">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="title-row">
+        <span>NoticeCatcher</span>
+        <span role="img" aria-label="sloth">🦥</span>
+      </div>
+      <p class="subtitle">
+        Your class group chat, read for you. Only the dates that matter.
+      </p>
+    </header>
+
+    <!-- Note box -->
+    <section class="note-box">
+      This demo uses a fake sample chat from 'Demo College'. To use your own chat, run the command-line tool on your own computer.
+    </section>
+
+    <!-- State 1: Start Action -->
+    <section id="state-start" class="action-section{% if preview %} hidden{% endif %}">
+      <button id="btn-run" type="button" class="btn-primary">
+        Try the sample chat
+      </button>
+      <p class="subline">
+        Takes a short while. The first run can be slow.
+      </p>
+    </section>
+
+    <!-- State 2: Loading State -->
+    <section id="state-loading" class="loading-section hidden">
+      <div class="loading-label">
+        Reading the chat...
+      </div>
+      <div class="progress-track">
+        <div class="loading-bar"></div>
+      </div>
+    </section>
+
+    <!-- Error State -->
+    <section id="state-error" class="error-box hidden">
+      <span id="error-message"></span>
+    </section>
+
+    <!-- State 3 & 4: Results and Needs-Check Section -->
+    <section id="state-results" class="results-section{% if not preview %} hidden{% endif %}">
+      
+      <!-- Found notices -->
+      <div class="section-group">
+        <h2 class="section-title">Found notices</h2>
+        <div id="notices-list" class="cards-list">
+          {% if preview %}
+          <!-- Preview Card 1 -->
+          <div class="notice-card">
+            <div class="card-header">
+              <h3 class="card-title">Computer Systems Midterm Exam</h3>
+            </div>
+            <div class="card-meta">
+              <span>Date: Oct 28, 2026</span>
+              <span class="dot-separator">•</span>
+              <span>Time: 10:00 AM</span>
+            </div>
+            <p class="card-source">From message: Batch Notice</p>
+          </div>
+
+          <!-- Preview Card 2 -->
+          <div class="notice-card">
+            <div class="card-header">
+              <h3 class="card-title">Coursework Project Submission</h3>
+            </div>
+            <div class="card-meta">
+              <span>Date: Oct 20, 2026</span>
+              <span class="dot-separator">•</span>
+              <span>Time: 11:59 PM</span>
+            </div>
+            <p class="card-source">From message: Course Coordinator</p>
+          </div>
+
+          <!-- Preview Card 3: Cancelled -->
+          <div class="notice-card">
+            <div class="card-header">
+              <h3 class="card-title cancelled">Guest Lecture on Robotics</h3>
+              <span class="badge-cancelled">Cancelled</span>
+            </div>
+            <div class="card-meta">
+              <span>Date: Oct 18, 2026</span>
+            </div>
+            <p class="card-source">From message: Department Notice</p>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Needs your check -->
+      <div class="section-group">
+        <h2 class="section-title">Needs your check</h2>
+        <div id="needs-check-list" class="cards-list">
+          {% if preview %}
+          <div class="notice-card">
+            <h3 class="card-title">Annual Sports Day</h3>
+            <p class="card-meta">
+              Original words: <span class="unclear-tag">"sometime next month"</span>
+            </p>
+            <p class="card-source">From message: Discussion</p>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+
+      <!-- Download button -->
+      <div class="action-section" style="align-items: flex-start;">
+        <a id="btn-download" href="#" class="btn-download">
+          Download calendar (.ics)
+        </a>
+      </div>
+
+    </section>
+
+    <!-- How it works -->
+    <section class="how-it-works">
+      <h2 class="how-title">How it works</h2>
+      <div class="steps-grid">
+        <div class="step-item">
+          <div class="step-num">Step 1</div>
+          <div class="step-heading">Read the chat</div>
+          <p class="step-desc">Extracts text and conversation history from exported group messages.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-num">Step 2</div>
+          <div class="step-heading">Find notices</div>
+          <p class="step-desc">Pinpoints mentions of exams, deliverables, cancellations, and meetings.</p>
+        </div>
+        <div class="step-item">
+          <div class="step-num">Step 3</div>
+          <div class="step-heading">Check the dates with plain code</div>
+          <p class="step-desc">Deterministic rules parse and normalize dates into standard calendar format.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>Open-source. Model proposes, plain code decides.</p>
+      <a href="#" class="footer-link">GitHub repo</a>
+    </div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>

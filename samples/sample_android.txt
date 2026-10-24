@@ -1,0 +1,48 @@
+10/10/2026, 8:00 am - Messages are end-to-end encrypted
+10/10/2026, 8:05 am - Aarav: Good morning everyone, welcome to the Demo College CS batch group!
+10/10/2026, 8:06 am - Meera: Good morning Aarav!
+10/10/2026, 8:10 am - Rohan: Hey all, glad this group is finally set up.
+10/10/2026, 8:12 am - Priya: Hi guys, does anyone have the syllabus copy?
+10/10/2026, 8:15 am - Kabir: I think Prof. Sharma uploaded it on the portal.
+10/10/2026, 9:00 am - Prof. Sharma: Good morning students. Welcome to the new semester at Demo College.
+10/10/2026, 9:05 am - Prof. Sharma: Urgent Notice:
+Final Exam for CS301 is scheduled on 28/10/2026 from 10:00 AM to 1:00 PM in Hall A.
+Please carry your student ID cards without fail.
+10/10/2026, 9:10 am - Aarav: Thank you sir for the update.
+10/10/2026, 9:15 am - Meera: Sir, will calculators be permitted in Hall A?
+10/10/2026, 9:20 am - Prof. Sharma: Yes, non-programmable scientific calculators only.
+10/10/2026, 9:30 am - Ananya: Great, thanks sir.
+10/10/2026, 10:00 am - Rohan: Who is ready for the lab session today?
+10/10/2026, 10:05 am - Kabir: I am still debugging my code from yesterday.
+10/10/2026, 10:15 am - Meera: <Media omitted>
+10/10/2026, 10:16 am - Meera: Check this meme haha
+10/10/2026, 10:20 am - Aarav: Classic recursion bug lol
+11/10/2026, 11:00 am - Prof. Sharma: Announcement regarding coursework:
+Reminder: Submit Assignment 2 on the Demo College portal by 20/10/2026 before 11:59 PM.
+Late submissions will receive a penalty.
+11/10/2026, 11:05 am - Priya: Is this individual or team submission?
+11/10/2026, 11:10 am - Prof. Sharma: Individual submissions only.
+11/10/2026, 11:15 am - Rohan: Okay sir, will do.
+11/10/2026, 2:00 pm - Kabir: Can someone explain problem 3 of the assignment?
+11/10/2026, 2:15 pm - Aarav: It's just dynamic programming with memoization.
+11/10/2026, 2:20 pm - Kabir: Ah, thanks!
+12/10/2026, 9:00 am - Prof. Sharma: Notice: Guest lecture on Robotics scheduled for 18/10/2026 is cancelled due to unavoidable circumstances.
+12/10/2026, 9:02 am - Ananya: Oh, that is unfortunate, was looking forward to it.
+12/10/2026, 9:05 am - Meera: Will it be rescheduled sir?
+12/10/2026, 9:15 am - Prof. Sharma: We will try to reschedule it later in November.
+13/10/2026, 10:00 am - Aarav: Does anyone know when sports day is?
+13/10/2026, 10:05 am - Rohan: The annual sports day will be held sometime next month, date to be decided by the council.
+13/10/2026, 10:10 am - Priya: Hope it doesn't clash with midterms.
+14/10/2026, 8:30 am - Prof. Sharma: Important notice: Project demo tomorrow at 2:00 PM in Lab 3.
+14/10/2026, 8:35 am - Kabir: Tomorrow at 2 PM noted sir.
+14/10/2026, 8:40 am - Aarav: Are we presenting slides or running code?
+14/10/2026, 8:45 am - Prof. Sharma: Both slides and live code execution.
+14/10/2026, 9:30 am - Prof. Sharma: Also note:
+Workshop on Cloud Computing is next Monday at 10:00 AM in Seminar Hall.
+Attendance is mandatory for all final year students.
+14/10/2026, 9:35 am - Meera: Noted sir!
+14/10/2026, 11:00 am - Priya: Let's meet in the library to prep for tomorrow.
+14/10/2026, 11:05 am - Rohan: Coming in 10 mins.
+14/10/2026, 11:10 am - Kabir: Save me a seat.
+14/10/2026, 14:30 - Aarav: Testing 24h format timestamp message.
+14/10/2026, 15:00 - Ananya: See you all in the library.
