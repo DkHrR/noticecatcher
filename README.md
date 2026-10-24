@@ -26,6 +26,11 @@ NoticeCatcher uses a hybrid architecture: **the model proposes, plain code decid
    python cli.py samples/sample_android.txt
    ```
    By default, the calendar is saved to `out/notices.ics`.
+3. To open the local web interface:
+   ```bash
+   python serve.py
+   ```
+   Then open http://127.0.0.1:5000 in your browser.
 
 ## Tests
 
@@ -45,7 +50,7 @@ NoticeCatcher uses Qwen/Qwen3-8B served through the Tinker sampling client. The 
 - Tested only on synthetic sample chats from "Demo College".
 - Expects dates formatted in DD/MM order.
 - Vague or incomplete dates are flagged as "needs your check" and not scheduled.
-- The web interface (`app.py`, `templates/index.html`) is currently a UI shell with background job polling; it is not yet connected to live model runs in production.
+- The web page runs locally with `python serve.py` (open http://127.0.0.1:5000) and processes only the built-in fake sample chat. It is not hosted anywhere; there is no live demo link.
 - Measured processing speed: 68.52 s for 40 messages (including network round-trips and cold start).
 
 ## License
