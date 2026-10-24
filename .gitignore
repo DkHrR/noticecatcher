@@ -4,6 +4,8 @@ __pycache__/
 *.py[cod]
 .venv/
 scratch*.py
+update_serve.py
+scan_step13.py
 real_chats/
 out/
 *.ics

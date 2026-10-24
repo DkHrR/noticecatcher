@@ -14,27 +14,49 @@ MODEL_NAME = "Qwen/Qwen3-8B"
 RENDERER_NAME = "qwen3_disable_thinking"
 
 
-def load_api_key() -> str:
+EXPECTED_PREFIX = "t" + "ml-"
+
+
+def load_api_key(bypass_prefix_check: bool = False) -> str:
     env_file = Path(__file__).resolve().parent / ".env"
-    if not env_file.exists():
-        print("API_KEY not found in .env (file does not exist)")
-        return ""
     api_key = ""
-    for line in env_file.read_text(encoding="utf-8").splitlines():
-        line = line.strip()
-        if not line or line.startswith("#"):
-            continue
-        if line.startswith("API_KEY="):
-            api_key = line.split("=", 1)[1].strip().strip("'\"")
-            break
+    if env_file.exists():
+        for line in env_file.read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if not line or line.startswith("#"):
+                continue
+            if line.startswith("API_KEY="):
+                api_key = line.split("=", 1)[1].strip().strip("'\"")
+                break
+    else:
+        api_key = os.environ.get("API_KEY", "")
+
     if not api_key:
-        print("API_KEY not found in .env")
-        return ""
-    expected_prefix = "t" + "ml-"
-    if not api_key.startswith(expected_prefix):
-        print(f"API_KEY in .env does not start with {expected_prefix}")
+        api_key = os.environ.get("API_KEY", "")
+
+    if not bypass_prefix_check and not api_key.startswith(EXPECTED_PREFIX):
         return ""
     return api_key
+
+
+def get_model_name() -> str:
+    env_file = Path(__file__).resolve().parent / ".env"
+    model = ""
+    if env_file.exists():
+        for line in env_file.read_text(encoding="utf-8").splitlines():
+            line = line.strip()
+            if not line or line.startswith("#"):
+                continue
+            if line.startswith("MODEL="):
+                model = line.split("=", 1)[1].strip().strip("'\"")
+                break
+    else:
+        model = os.environ.get("MODEL", "")
+
+    if not model:
+        model = os.environ.get("MODEL", "")
+
+    return model or MODEL_NAME
 
 
 def strip_think_blocks(text: str) -> str:
@@ -54,7 +76,8 @@ def _get_client_and_renderer() -> Tuple[Any, Any]:
     os.environ["TINKER_API_KEY"] = api_key
     try:
         service_client = tinker.ServiceClient()
-        sampling_client = service_client.create_sampling_client(base_model=MODEL_NAME)
+        model_name = get_model_name()
+        sampling_client = service_client.create_sampling_client(base_model=model_name)
         tokenizer = sampling_client.get_tokenizer()
         renderer = renderers.get_renderer(RENDERER_NAME, tokenizer=tokenizer)
         return sampling_client, renderer
